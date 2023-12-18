@@ -197,6 +197,7 @@ function start_vm {
     ${preemptible_flag} \
     --labels=gh_ready=0 \
     --metadata=startup-script="$startup_script" \
+    && sleep 10 \
     && echo "::set-output name=label::${VM_ID}"
 
   safety_off
